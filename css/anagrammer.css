@@ -52,8 +52,8 @@ body {
   text-transform: uppercase;
 }
 
-.letter.gu-transit {
-  opacity: 0.5;
+.letter.sortable-chosen {
+  opacity: 0.1;
 }
 
 .letter.gu-mirror {

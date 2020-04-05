@@ -2,15 +2,13 @@ class Anagrammer {
   constructor() {
     this.input = document.getElementById("input");
     this.letters_wrapper = document.querySelector(".letters-wrapper");
-    this.drake = window.dragula();
+    this.sortable = null;
 
     this.setInputEvent();
     this.parseInput();
   }
 
   parseInput() {
-    this.drake.destroy();
-
     var letters_array = this.getInput().split("");
 
     this.letters_wrapper.innerHTML = "";
@@ -22,7 +20,10 @@ class Anagrammer {
       this.letters_wrapper.appendChild(letter_el);
     }
 
-    this.drake = dragula([this.letters_wrapper]);
+    this.sortable = new Sortable(this.letters_wrapper, {
+      animation: 150,
+      ghostClass: 'blue-background-class'
+    });
   }
 
   getInput() {
