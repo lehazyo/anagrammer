@@ -2,7 +2,9 @@ class Anagrammer {
   constructor() {
     this.input = document.getElementById("input");
     this.letters_wrapper = document.querySelector(".letters-wrapper");
-    this.sortable = null;
+    this.sortable = new Sortable(this.letters_wrapper, {
+      animation: 100
+    });
 
     this.setInputEvent();
     this.parseInput();
@@ -23,11 +25,6 @@ class Anagrammer {
       letter_el.textContent = letter;
       this.letters_wrapper.appendChild(letter_el);
     }
-
-    this.sortable = new Sortable(this.letters_wrapper, {
-      animation: 150,
-      ghostClass: 'blue-background-class'
-    });
   }
 
   getInput() {
