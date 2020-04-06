@@ -25,6 +25,13 @@ class Anagrammer {
       letter_el.textContent = letter;
       this.letters_wrapper.appendChild(letter_el);
     }
+
+    if(letters_array.length) {
+      this.sortable.destroy();
+      this.sortable = new Sortable(this.letters_wrapper, {
+        animation: 100
+      });
+    }
   }
 
   getInput() {
